@@ -21,8 +21,8 @@ A Model Context Protocol (MCP) server that provides a tool for performing Google
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
-    cd web-search
+    git clone https://github.com/hexdecimal16/web-search-mcp
+    cd web-search-mcp
     ```
 
 2.  **Create and activate a virtual environment:**
@@ -54,7 +54,7 @@ You must configure your MCP client to launch the tool. The following JSON config
       "command": "uv",
       "args": [
         "--directory",
-        "/path/to/your/project/web-search",
+        "/path/to/your/project/web-search-mcp",
         "run",
         "web_search.py",
         "--timeout=15"
@@ -63,7 +63,7 @@ You must configure your MCP client to launch the tool. The following JSON config
   }
 }
 ```
-**Important:** Replace `/path/to/your/project/web-search` with the correct absolute path to this project on your filesystem.
+**Important:** Replace `/path/to/your/project/web-search-mcp` with the correct absolute path to this project on your filesystem.
 
 ## Testing
 
