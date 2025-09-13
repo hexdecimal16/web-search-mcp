@@ -1,0 +1,11 @@
+[project]
+name = "web-search"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "crawl4ai>=0.7.4",
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.14.0",
+]
