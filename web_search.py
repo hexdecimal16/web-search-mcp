@@ -92,10 +92,13 @@ def perform_google_search(query: str):
     """
     Synchronous wrapper for the async Google search function.
     """
+    program_dir = os.path.dirname(os.path.abspath(__file__))
+    user_data_dir = os.path.join(program_dir, ".profile")
+
     browser_config =  BrowserConfig(
-        headless=True,
+        headless=False,
         use_managed_browser=True,
-        user_data_dir="/Users/dtripathi/projects/mcp/web-search/.profile",
+        user_data_dir=user_data_dir,
 
     )
     crawler = AsyncWebCrawler(config=browser_config)

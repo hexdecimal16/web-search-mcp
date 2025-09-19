@@ -1,0 +1,45 @@
+diff --git a/main.py b/main.py
+deleted file mode 100644
+index da0c3ba..0000000
+--- a/main.py
++++ /dev/null
+@@ -1,6 +0,0 @@
+-def main():
+-    print("Hello from web-search!")
+-
+-
+-if __name__ == "__main__":
+-    main()
+diff --git a/pyproject.toml b/pyproject.toml
+index 903eb79..978518f 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -3,7 +3,7 @@ name = "web-search"
+ version = "0.1.0"
+ description = "Add your description here"
+ readme = "README.md"
+-requires-python = ">=3.13"
++requires-python = ">=3.11"
+ dependencies = [
+     "crawl4ai>=0.7.4",
+     "httpx>=0.28.1",
+diff --git a/web_search.py b/web_search.py
+index 63cec7d..3699238 100644
+--- a/web_search.py
++++ b/web_search.py
+@@ -92,10 +92,13 @@ def perform_google_search(query: str):
+     """
+     Synchronous wrapper for the async Google search function.
+     """
++    program_dir = os.path.dirname(os.path.abspath(__file__))
++    user_data_dir = os.path.join(program_dir, ".profile")
++
+     browser_config =  BrowserConfig(
+-        headless=True,
++        headless=False,
+         use_managed_browser=True,
+-        user_data_dir="/Users/dtripathi/projects/mcp/web-search/.profile",
++        user_data_dir=user_data_dir,
+ 
+     )
+     crawler = AsyncWebCrawler(config=browser_config)
